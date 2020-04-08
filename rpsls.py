@@ -1,65 +1,65 @@
 #coding:gbk
 """
-µÚÒ»¸öĞ¡ÏîÄ¿£ºRock-paper-scissors-lizard-Spock
-×÷Õß£ºÖ²²ú05ÁÎ½¨
-ÈÕÆÚ£º2020/4/7
+ç¬¬ä¸€ä¸ªå°é¡¹ç›®ï¼šRock-paper-scissors-lizard-Spock
+ä½œè€…ï¼šæ¤äº§05å»–å»º
+æ—¥æœŸï¼š2020/4/7
 """
 
 import random
-comp_number=random.randrange(0,4,1)
+comp_number=random.randrange(0,5,1)
 
 
-def name_to_number(name):   #½«Íæ¼ÒÊäÈë×ªÎªÊı
-	if name=="Ê¯Í·":
+def name_to_number(name):   #å°†ç©å®¶è¾“å…¥è½¬ä¸ºæ•°
+	if name=="çŸ³å¤´":
 		number=0
-	elif name=="Ê·²¨¿Ë":
+	elif name=="å²æ³¢å…‹":
 		number=1
-	elif name=="Ö½":
+	elif name=="çº¸":
 		number=2
-	elif name=="òáòæ":
+	elif name=="èœ¥èœ´":
 		number=3
-	elif name=="¼ôµ¶":
+	elif name=="å‰ªåˆ€":
 		number=4
 	return number
 
-def number_to_name(number):    #½«ÏµÍ³Êä³öÊı×ªÎªÃû
+def number_to_name(number):    #å°†ç³»ç»Ÿè¾“å‡ºæ•°è½¬ä¸ºå
 	if number==0:
-		name="Ê¯Í·"
+		name="çŸ³å¤´"
 	elif number==1:
-		name="Ê·²¨¿Ë"
+		name="å²æ³¢å…‹"
 	elif number==2:
-		name="Ö½"
+		name="çº¸"
 	elif number==3:
-		name="òáòæ"
+		name="èœ¥èœ´"
 	else:
-		name="¼ôµ¶"
+		name="å‰ªåˆ€"
 	return name
 
 def rpsls(player_choice):
-	if player_choice=="Ê¯Í·" or player_choice=="Ê·²¨¿Ë" or player_choice=="Ö½" or player_choice=="òáòæ" or player_choice=="¼ôµ¶":
+	if player_choice=="çŸ³å¤´" or player_choice=="å²æ³¢å…‹" or player_choice=="çº¸" or player_choice=="èœ¥èœ´" or player_choice=="å‰ªåˆ€":
 		player_choice_number=name_to_number(player_choice)
-		print("ÄúµÄÑ¡ÔñÎª: "+choice_name)
-		print("¼ÆËã»úµÄÑ¡ÔñÎª: "+number_to_name(comp_number))
+		print("æ‚¨çš„é€‰æ‹©ä¸º: "+choice_name)
+		print("è®¡ç®—æœºçš„é€‰æ‹©ä¸º: "+number_to_name(comp_number))
 		if player_choice_number==0 and (comp_number==3 or comp_number==4):
-			print("ÄúÓ®ÁË")
+			print("æ‚¨èµ¢äº†")
 		elif player_choice_number==1 and (comp_number==0 or comp_number==4):
-			print("ÄúÓ®ÁË")
+			print("æ‚¨èµ¢äº†")
 		elif player_choice_number==2 and (comp_number==0 or comp_number==1):
-			print("ÄúÓ®ÁË")
+			print("æ‚¨èµ¢äº†")
 		elif player_choice_number==3 and (comp_number==1 or comp_number==2):
-			print("ÄúÓ®ÁË")
+			print("æ‚¨èµ¢äº†")
 		elif player_choice_number==4 and (comp_number==2 or comp_number==3):
-			print("ÄúÓ®ÁË")
+			print("æ‚¨èµ¢äº†")
 		elif player_choice_number==comp_number:
-			print("ÄúºÍ¼ÆËã»ú³öµÄÒ»ÑùÄØ")
+			print("æ‚¨å’Œè®¡ç®—æœºå‡ºçš„ä¸€æ ·å‘¢")
 		else:
-			print("¼ÆËã»úÓ®ÁË")
+			print("è®¡ç®—æœºèµ¢äº†")
 	else:
 		print("Error: No Correct Name")
 
 
-print("»¶Ó­Ê¹ÓÃRPSLSÓÎÏ·")
-print("ÇëÊäÈëÄúµÄÑ¡Ôñ:")
+print("æ¬¢è¿ä½¿ç”¨RPSLSæ¸¸æˆ")
+print("è¯·è¾“å…¥æ‚¨çš„é€‰æ‹©:")
 choice_name=input()
 print("----------------")
 rpsls(choice_name)
