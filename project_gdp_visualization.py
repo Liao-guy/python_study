@@ -104,7 +104,7 @@ def render_world_map(gdpinfo, plot_countries, year, map_file): #将具体某年�
 	提示：本函数可视化需要利用pygal.maps.world.World()方法
 	"""
 	worldmap_chart = pygal.maps.world.World()
-	worldmap_chart.title = "全球GDP分布图--作者：廖建"
+	worldmap_chart.title = "全球GDP分布图"
 	worldmap_chart.add(year,build_map_dict_by_name(gdpinfo,plot_countries, year)[0])
 	worldmap_chart.add("missing from world bank",build_map_dict_by_name(gdpinfo,plot_countries, year)[1])
 	worldmap_chart.add("no data at this year",build_map_dict_by_name(gdpinfo,plot_countries, year)[2])
